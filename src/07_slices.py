@@ -21,6 +21,7 @@ print(a[-2])
 print(a[-3:])
 
 # Output the two middle elements in the array: [1, 7]
+# print(a[2:3]) #Will only print [1]
 print(a[2:4])
 
 # Output every element except the first one: [4, 1, 7, 9, 6]
@@ -30,6 +31,9 @@ print(a[1:])
 # print(a[0:5])
 # print(a[:5])
 print(a[:-1])
+
+#Under the hood, slicing creates a copy, and is O(n) space and time complexity
+#We'll understand this later :)
 
 # For string s...
 

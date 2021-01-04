@@ -32,13 +32,13 @@ print(y)
 # Use a list comprehension to create a list containing only the _even_ elements
 # the user entered into list x.
 
-# x = input("Enter comma-separated numbers: ").split(',')
+x = input("Enter comma-separated numbers: ").split(',')
 
 # What do you need between the square brackets to make it work?
 #y = [x[:len(x) + 1:2]] this makes it grab every other number
-# y = [i for i in x if int(i) %2 == 0]
+y = [i for i in x if int(i) %2 == 0]
 
-# print(y)
+print(y)
 
 # num = int(input("Type a number:"))
 # print(num)
