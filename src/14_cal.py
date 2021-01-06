@@ -28,5 +28,77 @@ it should use today’s date to get the month and year.
 """
 
 import sys
+import calendar as cal
+from datetime import datetime as dt
+
+# Create variable to hold today's date
+today = dt.today()
+# Get the user's input from the command line and check edge cases
+# If user enters all required inputs in the command line
+if len(sys.argv) == 3:
+    # Convert user input to ints and return the calender month and year
+    print(cal.TextCalendar().formatmonth(int(sys.argv[2]), int(sys.argv[1])))
+    sys.exit(0)  # Exits the program
+# If the user only enters one argument, such as month but not year or vise versa
+elif len(sys.argv) == 2:
+    # Return current in place of missing value from user input
+    if int(sys.argv[1]) in range(12):
+        print(cal.TextCalendar().formatmonth(today.year, int(sys.argv[1])))
+        sys.exit(0)  # Exits the program
+    elif int(sys.argv[1]) in range(1000, 2021):
+        print('Year', int(sys.argv[1]))
+        print(cal.TextCalendar().formatmonth(int(sys.argv[1]), today.month))
+        sys.exit(0)  # Exits the program
+# If the user does not enter and arguments in the command line
+if len(sys.argv) == 1:
+    # Return current month and year
+    print(cal.TextCalendar().formatmonth(today.year, today.month))
+    sys.exit(0)  # Exits the program
+# If user enters an invalid format
+else:
+    print('Usage: 14_cal.py [month number] [year]')  # Return usage statement
+    sys.exit(1)  # Exit the program
+
+# Ava's code
+import sys
 import calendar
 from datetime import datetime
+date = datetime.today()
+cur_month = date.month
+cur_year = date.year
+if len(sys.argv) == 1:
+    mon = cur_month
+    year = cur_year
+elif len(sys.argv)==2:
+    mon = int(sys.argv[1])  # Position 0 is the file name
+    year = cur_year
+else:
+    mon = int(sys.argv[1])
+    year = int(sys.argv[2])
+cal = calendar.TextCalendar().formatmonth(year, mon)
+print(cal)
+
+# Doc's
+import sys
+import calendar
+from datetime import datetime
+# $%$Start
+l = len(sys.argv)
+if l == 1:
+    # User didn't specify any input
+    month = datetime.now().month
+    year = datetime.now().year
+elif l == 2:
+    # User didn't specify year
+    month = int(sys.argv[1])
+    year = datetime.now().year
+elif l == 3:
+    # User specified both month and year
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+else:
+    # User provided faulty input
+    print("usage: calendar.py [month] [year]")
+    sys.exit(1)
+cal = calendar.TextCalendar()
+cal.prmonth(year, month)

@@ -10,6 +10,7 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
+# Best oractice is to use a context manager, so with the with keyword
 text = open("foo.txt", "r") 
 print(text.read())
 text.close()
@@ -21,6 +22,7 @@ text.close()
 # sure that it contains what you expect it to contain
 
 #a+ open and start a new file or add to one
+# r+ opens a file for reading and writing
 #w overwrite
 
 # YOUR CODE HERE
@@ -31,3 +33,5 @@ bartext.close() #Close so it doesn't stay in memory
 bartext = open("baz.txt", "w")
 bartext.write("The cat in the hat\nknows a lot\nabout that")
 bartext.close() #Close so it doesn't stay in memory
+
+# use "a" to add to an existing file

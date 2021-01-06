@@ -1,3 +1,8 @@
+from dis import dis # Debugging
+# Notes:
+# First line of the function is the header, the lines indented below are the body. PEP-8 convention is to indent by four spaces
+
+
 # Write a function is_even that will return true if the passed-in number is even.
 
 # YOUR CODE HERE
@@ -28,3 +33,5 @@ def even_odd(num):
 
 even_odd(9)
 even_odd(8)
+
+# dis(even_odd) # Debugging

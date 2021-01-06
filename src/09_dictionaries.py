@@ -15,6 +15,18 @@ has the following keys:
  - name: a name string for this location
 """
 
+# Notes:
+# A dictionary is like a list, except more general. In  a list, the indices (the index positions) have to be numbers, but in a dict it can be almost any type.
+#  A dictionary is made of a collection of key (which is like the index) and value pairs, each key has a single value, and each pair is called a key-value pair or an item
+#  Each key "maps" to a value
+# You can create an empty dictionary with a set of curly brackets {} or with the built in function dict()
+# Like this:
+# new_dict = {}
+# new_dict = dict()
+
+# Also, note: do not use the word "dict" as a variable name because it is the name of a built in function. 
+# Cool and maybe a little scary thing about Python, it is really easy to overwrite built in function, like the print() function, which is neat but also can really mess up your code, especially when you aren't sure what you overwrote.
+
 waypoints = [
     {
         "lat": 43,
